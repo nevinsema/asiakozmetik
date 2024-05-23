@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>asia kozmetik</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="contact-form" href="contact.html">
+</head>
+<body>
+  <header class="header">
+    <a href="#" class="logo">
+      <img src="images/logo.png" alt="logo" ></a>
+  <nav class="navbar">
+    <a class="active" href="/">Anasayfa</a>
+    <a href="#">Ürünler</a>
+    <a href="#">Giriş Yap</a>
+    <a href="#">Üye ol</a>
+    <a href="#" id="contact-link">İletişim</a>
+  </nav>
+
+  <div class="buttons">
+    <input type="text" id="search-box" placeholder="Ürün Ara...">
+    <button id="search-btn">
+      <i class="fas fa-search"></i>
+    </button>
+    <button id="cart-btn">
+      <i class="fas fa-shopping-cart"></i>
+    </button>
+    <button id="menu-btn">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+  
+</header>
+<!-- home kod başlangıç -->
+<section class="home" id="home">
+  <div class="content">
+    <h2>YAZA MERHABA</h2>
+    <p>Yeni koleksiyonumuzla sen de cildini yaza hazırla!</p>
+    <a href="#" class="btn">Şimdi Keşfet</a>
+  </div>
+</section>
+<!-- home kod bitiş -->
+  
+<div id="cart-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Sepetiniz</h2>
+    <ul id="cart-items"></ul>
+    <h3 id="cart-total">Toplam: 0 TL</h3>
+    <button id="complete-order-btn" class="btn-complete-order">Siparişi Tamamla</button>
+  </div>
+</div>
+
+<!-- Order Completion Modal -->
+<div id="order-completion-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Siparişi Tamamla</h2>
+    <form id="complete-order-form">
+      <button id="uye-giris" class="btn-uye">Üye Girişi</button>
+      <h3>Üye olmadan devam et:</h3>
+      <label for="name">İsim - Soyisim:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="mail">E-mail adresi:</label>
+      <input type="text" id="mail" name="mail" required>
+      <label for="address">Adres ekle:</label>
+      <input type="text" id="address" name="address" required>
+      <label for="phone">Telefon:</label>
+      <input type="tel" id="phone" name="phone" required>
+      <button type="submit">Ödemeyi Tamamla</button>
+    </form>
+  </div>
+</div>
+
+  
+
+  <!-- menü kod başlangıç -->
+  <section  class="menu" id="menu">
+  <h1 class="heading">
+    "Yeni"
+  <span>Ürünler</span>
+</h1>
+  <div class="box-container">
+    <div class="box">
+      <div class="box-head">
+        <img src="https://cyrene.com.tr/cdn/shop/products/sunscreen_invisible.jpg?v=1599811646" alt="Güneş Kremi">
+        <span class="menu-category">Güneş Kremi</span>
+        <h3>Cyrène Görünmez Fiziksel Güneş Kremi</h3>
+        <div class="price">1250 TL <span> 1780 TL</span></div>
+      </div>
+      <div class="box-bottom">
+        <a href="#" class="btn">Sepete Ekle</a>
+      </div>
+    </div>
+    <div class="box">
+      <div class="box-head">
+        <img src="https://cdn.dsmcdn.com/mnresize/400/-/ty1141/product/media/images/prod/SPM/PIM/20240120/06/d7ec8cf5-dec5-32cb-bd1c-b90d67c697d8/1_org_zoom.jpg" alt="nemlendirici">
+        <span class="menu-category">Nemlendirici</span>
+        <h3>Nemlendirici Krem</h3>
+        <div class="price">330 TL <span> 420 TL</span></div>
+      </div>
+      <div class="box-bottom">
+        <a href="#" class="btn">Sepete Ekle</a>
+      </div>
+    </div>
+    <div class="box">
+      <div class="box-head">
+        <img src="https://cyrene.com.tr/cdn/shop/files/glowarbutin_yeni_urun.jpg?v=1692362088" alt="serum">
+        <span class="menu-category">Serum</span>
+        <h3>Alpha Arbutin C Whitening Serum</h3>
+        <div class="price">750 TL <span> 1200 TL</span></div>
+      </div>
+      <div class="box-bottom">
+        <a href="#" class="btn">Sepete Ekle</a>
+      </div>
+    </div>
+    <div class="box">
+      <div class="box-head">
+        <img src="https://cyrene.com.tr/cdn/shop/files/cerapep_cleanser_3bd98e79-8d65-4b89-9d94-882cd0c18855.jpg?v=1704443263" alt="Yüz Temizleme Jeli">
+        <span class="menu-category">Yüz Temizleme Jeli</span>
+        <h3>Cyréne CeraPep Hydrating Cream Cleanser Yüz temizleme Jeli</h3>
+        <div class="price">325 TL <span> 875 TL</span></div>
+      </div>
+      <div class="box-bottom">
+        <a href="#" class="btn">Sepete Ekle</a>
+      </div>
+    </div>
+  </div>
+  <!-- menü kod bitiş -->
+  <main>
+    <section id="products">
+      <h1 class="heading">
+        Tüm
+      <span>Ürünler</span>
+    </h1>
+      <div class="product-grid">
+        <div class="product-item">
+          <img src="https://cyrene.com.tr/cdn/shop/products/sunscreen_invisible.jpg?v=1599811646" alt="Güneş Kremi">
+          <h2>Cyrène Görünmez Fiziksel Güneş Kremi</h2>
+          <p>Cildini zararlı ışınlardan koru.</p>
+          <h3>1250 TL</h3>
+          <button class="btn-add-cart">Sepete Ekle</button>
+        </div>
+        <div class="product-item">
+          <img src="https://cdn.dsmcdn.com/mnresize/400/-/ty1141/product/media/images/prod/SPM/PIM/20240120/06/d7ec8cf5-dec5-32cb-bd1c-b90d67c697d8/1_org_zoom.jpg" alt="nemlendirici">
+          <h2>Nemlendirici Krem</h2>
+          <p>Nemi cildine hapset!</p>
+          <h3>330 TL</h3>
+          <button class="btn-add-cart">Sepete Ekle</button>
+        </div>
+        <div class="product-item">
+          <img src="https://cyrene.com.tr/cdn/shop/files/glowarbutin_yeni_urun.jpg?v=1692362088" alt="serum">
+          <h2>Alpha Arbutin C Whitening Serum</h2>
+          <p>Arbutin ve C vitamini ile ton farklılıkları olmayan, pürüzsüz, sağlıklı, ışıltılı ve daha genç bir cilde kavuş!</p>
+          <h3>750 TL</h3>
+          <button class="btn-add-cart">Sepete Ekle</button>
+        </div>
+        <div class="product-item">
+          <img src="https://cyrene.com.tr/cdn/shop/files/cerapep_cleanser_3bd98e79-8d65-4b89-9d94-882cd0c18855.jpg?v=1704443263" alt="Yüz Temizleme Jeli">
+          <h2>Cyréne CeraPep Hydrating Cream Cleanser Yüz temizleme Jeli</h2>
+          <p>Cildi kurutmadan ve tahriş etmeden derinlemesine temizleyerek  kir ve makyajı etkili bir şekilde ciltten uzaklaştırır.</p>
+          <h3>325 TL</h3>
+          <button class="btn-add-cart">Sepete Ekle</button>
+        </div>
+        <div class="product-item">
+          <img src="https://cdn.myikas.com/images/d3378d43-0c01-4053-9a53-957c4ae7edc1/197bf082-6cfc-4625-b86a-00466512cdcb/1080/275697b1-11d0-4b75-aa0b-8fd9f4ebad42.jpg" alt="Tonik">
+          <h2>The Purest Solistion Salisilik Asit Tonik 200 Ml</h2>
+          <p>Sivilce Ve Siyah Nokta Karşıtı, Gözenek Sıkılaştırıcı Salisilik Asit Tonik, cildi yağ, kir, ölü hücreler ve makyaj kalıntılarından arındırarak daha temiz ve sağlıklı bir cilt sağlar.</p>
+          <h3>385 TL</h3>
+          <button class="btn-add-cart">Sepete Ekle</button>
+        </div>
+        <div class="product-item">
+          <img src="https://www.dermoeczanem.com/garnier-c-vitamini-kusursuz-makyaj-temizleme-suyu-400-ml-garnier-164168-73-B.jpg" alt="Makyaj Temizleme Suyu">
+          <h2>Garnier C Vitamini Kusursuz Makyaj Temizleme Suyu 400 ml</h2>
+          <h3>225 TL</h3>
+          <p>C vitamini içeren formül ile bu ürün bir yandan makyajı temizleyip cildi arındırır, bir yandan da aydınlık bir görünüm sağlar.</p>
+          <button class="btn-add-cart">Sepete Ekle</button>
+        </div>
+        <div class="product-item">
+          <img src="https://cdn03.ciceksepeti.com/cicek/kcm32641017-1/L/rossmann-isana-med-vucut-sutu-losyonu-250-ml-kcm32641017-1-18bd570bc51a476995af91a47b62fca1.jpg" alt="Vücut Losyonu">
+          <h2>Isana Med Vücut Sütü Losyonu 250 ml</h2>
+          <p>%5,5 oranında üre içeren özel formülasyonu ile cilt tabakasını korurken kuru, nemsizlikten kaynaklanan gergin ve pürüzlü cildi yoğun nemle besleyerek bakımını sağlar</p>
+          <h3>190 TL</h3>
+          <button class="btn-add-cart">Sepete Ekle</button>
+        </div>
+        <div class="product-item">
+          <img src="https://cdn.dsmcdn.com/mnresize/500/-/ty1152/product/media/images/prod/SPM/PIM/20240130/09/d1fd3796-3b95-3854-ad46-2adddf8f339d/1_org.jpg" alt="Şampuan">
+          <h2>Head And Shoulders Dermaxpro Scalp Revitaliser Dökülme Karşıtı Şampuan 350 ml</h2>
+          <p>E vitamini ve niacinamide ile zenginleştirilmiş kepeğe karşı etkili şampuan, saç derisini besleyip doğal saç uzamasını desteklemeye yardımcı olurken nemlenmiş ve kepeksiz saç derisine kavuşmanızı sağlar.</p>
+          <h3>292 TL</h3>
+          <button class="btn-add-cart">Sepete Ekle</button>
+        </div>
+        <div class="product-item">
+          <img src="https://cdn03.ciceksepeti.com/cicek/kcm37106770-1/L/isana-kremsi-dus-jeli-300ml-balli-sutlu-kcm37106770-1-f94b9162b5404eb89f99e3618125471e.jpg" alt="Duş Jeli">
+          <h2>Isana Kremsi Duş Jeli Ballı Sütlü 300 ml</h2>
+          <p>Ballı ve sütlü duş jeli ile kendinizi ödüllendirin! Bu kremsi duş jeli, cildinizi nazikçe temizler ve nemlendirir, yumuşak ve pürüzsüz bir his bırakır.</p>
+          <h3>50 TL</h3>
+          <button class="btn-add-cart">Sepete Ekle</button>
+        </div>
+        <div class="product-item">
+          <img src="https://static.ticimax.cloud/cdn-cgi/image/width=-,quality=85/62484/uploads/urunresimleri/buyuk/kil-maskesi-kahve-ozu-yesil-cay-ozu-ta-6-508e.jpg" alt="Kil Maskesi">
+          <h2>Maru.derm Kahve Özü + Yeşil Çay Özü Tazeleyici Kil Maskesi 100 ML </h2>
+          <p>Kahve Özü ve Yeşil Çay Özü içeren Tazeleyici Kil Maskesi, özellikle cansız görünen ve yorgun ciltler için tasarlanmıştır. Kahve özünün enerji verici ve mikro dolaşımı canlandırıcı etkisi, ciltteki canlılığı artırmaya yardımcı olurken, yeşil çay özünün antioksidan özellikleri cildi zararlı dış etkenlere karşı korur.</p>
+          <h3>174,95 TL</h3>
+          <button class="btn-add-cart">Sepete Ekle</button>
+        </div>
+        <div class="product-item">
+          <img src="https://witcdn.procsin.com/herbal-science-boom-butter-cilt-peelingi-190-ml-actives-procsin-4545-89-B.webp" alt="Vücut Peelingi">
+          <h2>PROCSIN Body Boom Besleyici ve Arındırıcı El Ayak Vücut Peelingi 190 ML </h2>
+          <p>Duştan çıkmadan 5 dk önce uygula, gün boyu yumuşacık ve pürüzsüz bir cildin keyfini çıkar</p>
+          <h3>121,25 TL</h3>
+          <button class="btn-add-cart">Sepete Ekle</button>
+        </div>
+        <div class="product-item">
+          <img src="https://cdn.myikas.com/images/4605bc42-d070-4d3f-b5b6-9117e54ab9ae/372a31eb-7839-4d8f-b765-d1c3b2b80e8e/1080/frame-7.jpg" alt="Peeling serum">
+          <h2>The Purest Solutions AHA 10% + BHA 2% Canlandırıcı ve Cilt Tonu Eşitleyici Peeling Serum 30 ml </h2>
+          <p>Akne ve akne izi sorunu yaşayan ciltlerin yenilenmesine katkı sağlar.</p>
+          <h3>299,99 TL</h3>
+          <button class="btn-add-cart">Sepete Ekle</button>
+        </div>
+      
+        <div class="product-item">
+          <img src="https://a40431.a-cdn.akinoncloud.com/products/2021/06/06/1159/bfdf69a5-73d8-46ad-b8dd-85db32c1e1bb_size500x500_cropCenter.jpg" alt="Dudak Balmı">
+          <h2>Shea Butter Lip Balm Stick  </h2>
+          <p>%10 Shea Yağı ile formüle edilmiş bu dudak balsamı, kuru dudakları korur, besler, nemlendirir ve pürüzsüzleştirir.</p>
+          <h3>879,99 TL</h3>
+          <button class="btn-add-cart">Sepete Ekle</button>
+        </div>
+      </div>
+      
+    
+    
+
+      <!-- Üye ol modal başlangıç -->
+<div id="signup-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Üye Ol</h2>
+    <!-- Üye Ol Formu -->
+    <form id="signup-form">
+      <label for="signup-username">Kullanıcı Adı:</label>
+      <input type="text" id="signup-username" name="username">
+      <label for="signup-email">Email:</label>
+      <input type="email" id="signup-email" name="email">
+      <label for="signup-password">Şifre:</label>
+      <input type="password" id="signup-password" name="password">
+      <label for="signup-password">Şifreyi Tekrar Girin:</label>
+      <input type="password" id="signup-password-confirm" name="password">
+      <button type="submit">Üye Ol</button>
+    </form>
+
+    <div id="feedback-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Bizimle İletişime geçin</h2>
+        <!-- Geri Bildirim Formu -->
+      <div id="feedback-modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Bizimle İletişime geçin</h2>
+      <form id="feedback-form">
+        <h2>Geri Bildirim</h2>
+        <label for="feedback-name">Adınız:</label>
+        <input type="text" id="feedback-name" name="name">
+        <label for="feedback-email">Email:</label>
+        <input type="email" id="feedback-email" name="email">
+        <label for="feedback-message">Mesajınız:</label>
+        <textarea id="feedback-message" name="message"></textarea>
+        <button type="submit">Gönder</button>
+      </form>
+    </div>
+  </div>
+      </div>
+    </div>
+    
+      
+
+  </div>
+</div>
+      <!-- Üye girişi modal başlangıç -->
+      <div id="login-modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Giriş Yap</h2>
+          <!-- Üye Girişi Formu -->
+          <form id="login-form">
+            <label for="login-username">Kullanıcı Adı:</label>
+            <input type="text" id="login-username" name="username">
+            <label for="login-email">Email:</label>
+            <input type="email" id="login-email" name="email">
+            <label for="login-password">Şifre:</label>
+            <input type="password" id="login-password" name="password">
+            <button type="submit">Giriş Yap</button>
+          </form>
+          
+        </div>
+      </div>
+<!-- Üye ol modal bitiş -->
+
+<!-- İletişim Formları Seçim Modal -->
+<div id="contact-selection-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>İletişim Formları</h2>
+    <button id="open-complaint-modal">Şikayet Formu</button>
+    <button id="open-request-product-modal">İstek Ürün Formu</button>
+    <button id="open-return-request-modal">İade Talep Formu</button>
+  </div>
+</div>
+
+    </section>
+  </main>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>Hakkımızda</h4>
+        <p>asia kozmetik, cildiniz için en iyi ürünleri sunar.</p>
+      </div>
+      <div class="footer-section">
+        <h4>İletişim</h4>
+        <p>Email: info@asiakozmetik.com</p>
+        <p>Telefon: 0123 456 789</p>
+      </div>
+      <div class="footer-section">
+        <h4>Sosyal Medya</h4>
+        <p>
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">Twitter</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  <!-- Şikayet Formu Modal -->
+  <div id="complaint-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Şikayet Formu</h2>
+      <form id="complaint-form">
+        <label for="complaint-name">Adınız:</label>
+        <input type="text" id="complaint-name" name="name" required>
+        <label for="complaint-email">Email:</label>
+        <input type="email" id="complaint-email" name="email" required>
+        <label for="complaint-message">Şikayetiniz:</label>
+        <textarea id="complaint-message" name="message" required></textarea>
+        <button type="submit">Gönder</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- İstek Ürün Formu Modal -->
+  <div id="request-product-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>İstek Ürün Formu</h2>
+      <form id="request-product-form">
+        <label for="request-product-name">Adınız:</label>
+        <input type="text" id="request-product-name" name="name" required>
+        <label for="request-product-email">Email:</label>
+        <input type="email" id="request-product-email" name="email" required>
+        <label for="request-product-message">İstediğiniz Ürün:</label>
+        <textarea id="request-product-message" name="message" required></textarea>
+        <button type="submit">Gönder</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- İade Talep Formu Modal -->
+  <div id="return-request-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>İade Talep Formu</h2>
+      <form id="return-request-form">
+        <label for="return-request-name">Adınız:</label>
+        <input type="text" id="return-request-name" name="name" required>
+        <label for="return-request-email">Email:</label>
+        <input type="email" id="return-request-email" name="email" >
+        <label for="return-request-message">İade Talebiniz:</label>
+        <textarea id="return-request-message" name="message" required></textarea>
+        <button type="submit">Gönder</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- İletişim Formları Seçim Modal -->
+  <div id="contact-selection-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>İletişim Formları</h2>
+      <button id="open-complaint-modal">Şikayet Formu</button>
+      <button id="open-request-product-modal">İstek Ürün Formu</button>
+      <button id="open-return-request-modal">İade Talep Formu</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get the modals
+      var complaintModal = document.getElementById('complaint-modal');
+      var requestProductModal = document.getElementById('request-product-modal');
+      var returnRequestModal = document.getElementById('return-request-modal');
+      var contactSelectionModal = document.getElementById('contact-selection-modal');
+
+      // Get the buttons that open the modals
+      var contactLink = document.getElementById('contact-link');
+      var openComplaintModalBtn = document.getElementById('open-complaint-modal');
+      var openRequestProductModalBtn = document.getElementById('open-request-product-modal');
+      var openReturnRequestModalBtn = document.getElementById('open-return-request-modal');
+
+      // Get the <span> elements that close the modals
+      var spanCloseButtons = document.getElementsByClassName('close');
+
+      // Function to open the modal
+      function openModal(modal) {
+        modal.style.display = 'block';
+      }
+
+      // Add event listener to contact link to open contact selection modal
+      contactLink.onclick = function() {
+        openModal(contactSelectionModal);
+      };
+
+      // Add event listeners to buttons in contact selection modal to open specific modals
+      openComplaintModalBtn.onclick = function() {
+        contactSelectionModal.style.display = 'none';
+        openModal(complaintModal);
+      };
+      openRequestProductModalBtn.onclick = function() {
+        contactSelectionModal.style.display = 'none';
+        openModal(requestProductModal);
+      };
+      openReturnRequestModalBtn.onclick = function() {
+        contactSelectionModal.style.display = 'none';
+        openModal(returnRequestModal);
+      };
+
+      // When the user clicks on <span> (x), close the modal
+      for (var i = 0; i < spanCloseButtons.length; i++) {
+        spanCloseButtons[i].onclick = function() {
+          this.parentElement.parentElement.style.display = 'none';
+        }
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == complaintModal) {
+          complaintModal.style.display = 'none';
+        }
+        if (event.target == requestProductModal) {
+          requestProductModal.style.display = 'none';
+        }
+        if (event.target == returnRequestModal) {
+          returnRequestModal.style.display = 'none';
+        }
+        if (event.target == contactSelectionModal) {
+          contactSelectionModal.style.display = 'none';
+        }
+      }
+    });
+  </script>
+  <script>
+    const searchBtn = document.getElementById('search-btn');
+    const searchBox = document.getElementById('search-box');
+    const boxContainer = document.querySelector('.box-container');
+    const resultsContainer = document.getElementById('results-container');
+
+    searchBtn.addEventListener('click', () => {
+      const searchTerm = searchBox.value.toLowerCase();
+      resultsContainer.innerHTML = '';
+
+      Array.from(boxContainer.children).forEach(box => {
+        const productName = box.querySelector('h3').textContent.toLowerCase();
+        if (productName.includes(searchTerm)) {
+          const clonedBox = box.cloneNode(true);
+          resultsContainer.appendChild(clonedBox);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+  <script src="js/script.js"></script>
+    
+  
+</body>
+</html>
+
+
+
+
